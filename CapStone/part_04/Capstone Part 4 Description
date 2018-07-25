@@ -1,0 +1,28 @@
+# Capstone Part 4:
+
+
+## What is your Question?
+The question of the project was to determine the effect on stock price that occurs when a creative director enters and exits a luxury conglomerate. Luxury houses and high priced apparel groups have performed very well over the previous 5 years. Given the recent ‘musical chairs’ act of some of the world's most renowned creative directors I wanted to observe the historical stock prices to attempt to quantify their effect on not only the large company which hired them but their effect on the fast fashion retailers who reap the benefits of their creative talent and are able to offer clothing that follows the trends created by the directors at an extremely low price point. From looking into the previous stock price history, I wanted to also create a stock prediction algorithm to forecast daily closing values and whether they would close higher of lower at the time of next days closing compared to the previous
+
+---
+
+## What is your data?
+I pulled historical stock pricing csv’s from yahoo finance for each stock, going back to 2002. As for the creative director timelines I pulled them from Wikipedia to have date ranges for when the director was at each brand. I also pulled google trends csv files tracking the relevant search history for each brand, to see if their social relevance had a correlation to the stock prediction and overall success of the brands stock price. 
+
+As for the financial indicators I fairly standard financial features like percentage change and a few different variations on simple moving average. 
+
+---
+
+## Potential models?
+The models quickly presented themselves as a sleeve of sklearn models. Since I chose to predict whether a stock’s closing price would finish higher or lower than the previous day, that is a classification problem so classification models must be used. I implemented xGboost, random forest, logistic regression and svm. I specifically started with svm because its use of gradient descent has become very common as of late within financial modeling and stock prediction. I attempted to build a neural net with a different approach on the indicators but decided to focus on the sklearn models listed above instead.
+
+
+---
+
+## Results?
+The baseline prediction score was .52 and I from using the sleeve of sklearn models I which I have yet to tune at the moment I have gotten model scores ranging from .51 to .82. Majority of my prediction results have been in the mid to high .7’s. My strongest model score was using XgBoost and previous Adidas stock pricing of .82 on previously unseen data. With some more tuning and more feature engineering I hope to raise the model scores and bring in the range I included above. 
+
+---
+
+## Answering the original question?
+The project so far has not identified the creatives impact as strongly as I assumed in the beginning, but with more specific visualizations I believe I could better highlight their impact. The stock prediction models have proved effective even without proper tuning. As for the effect on retailers like H&M and Zara I have yet to answer that question, but am trying to highlight that through different visualization approaches. 
